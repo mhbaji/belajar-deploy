@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>
+        Ini index dari templates
+    </h1>
+    <p>
+        {{ value }}
+    </p>
+    <ul>
+        {% for _loop in range(ulang)%}
+            <p>
+                hiya {{ _loop }} {{ hari[_loop] }}
+            </p>
+            {% if _loop >= 1%}
+                <h2>
+                    Ini loop ke {{ _loop }}
+                </h2>
+            {% elif _loop <  2 %}
+                <h1>
+                    {{ _loop }}
+                </h1>
+            {% else %} 
+                <h1>
+                    ini Bukan
+                </h1>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {%for nama_hari in hari %} 
+            <li>
+                {{ nama_hari }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% set ini_variabel = 'baru gan' %}
+        {{ ini_variabel }}
+    </ul>
+
+    <ul>
+        {{ hari|length }}
+    </ul>
+
+    <ul>
+        <a href="{{ url_for('index') }}">Index</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </ul>
+</body>
+</html>
